@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'app/**'
+      - '.github/workflows/ci.yml'
 
 env:
   REGISTRY: ghcr.io
