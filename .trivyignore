@@ -1,0 +1,3 @@
+# wheel and jaraco.context are build-time dependencies
+CVE-2026-24049
+CVE-2026-23949
