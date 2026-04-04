@@ -3,11 +3,12 @@ FROM python:3.11-slim AS builder
 
 WORKDIR /app
 COPY requirements.txt .
-RUN pip install --upgrade pip "wheel==0.46.2" "jaraco.context==6.1.0" && \
-    pip install --no-cache-dir --prefix=/install -r requirements.txt
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
 
 # Runtime stage
 FROM python:3.11-slim
+
+RUN pip install --upgrade pip "wheel==0.46.2" "jaraco.context==6.1.0"
 
 WORKDIR /app
 COPY --from=builder /install /usr/local
