@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-k8s
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/brkcvlk/hello-k8s
+    targetRevision: HEAD
+    path: manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: hello-k8s
+  syncPolicy:
+    automated:
+      prune: true # remove cluster objects deleted from repo
+      selfHeal: true # revert manual cluster changes to match repo
