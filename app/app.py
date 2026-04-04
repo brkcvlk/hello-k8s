@@ -28,6 +28,4 @@ def ready(response: Response):
 
 @app.get("/")
 def root():
-    return {
-        "message": "hello k8s!",
-    }
+    return {"message": "hello k8s!"}
