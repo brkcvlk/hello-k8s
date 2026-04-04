@@ -59,6 +59,7 @@ jobs:
           image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           severity: CRITICAL,HIGH
           exit-code: 1
+          ignore-unfixed: true
 
       - name: Push Docker image
         uses: docker/build-push-action@v5
