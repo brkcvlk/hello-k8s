@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: fastapi
-          image: ghcr.io/brkcvlk/hello-k8s-fastapi:967ed4ace87801337a9dc769dac92372c03b04ba
+          image: ghcr.io/brkcvlk/hello-k8s-fastapi:6f962ae8aec2afd03e6dff4a0f984a662f549d3a
           imagePullPolicy: Always 
           ports:
             - containerPort: 8000
