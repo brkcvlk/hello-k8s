@@ -29,7 +29,7 @@ jobs:
           sed -i "s|image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:.*|image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.event.workflow_run.head_sha }}|g" manifests/fastapi-deployment.yml
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "update-fastapi-manifest: fastapi-deployment.yml image >> ${{ github.event.workflow_run.head_sha }}"
