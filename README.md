@@ -3,7 +3,7 @@
 > [!NOTE]
 > This project was built for learning and practicing Kubernetes concepts. 
 
-A Kubernetes project that serves a simple REST API (`GET /` : `{"message": "hello k8s!"}`) using FastAPI behind an Nginx reverse proxy, with a CI/CD pipeline and GitOps deployment via Argo CD.
+A Kubernetes project that serves a simple REST API (`GET /` : `{"message": "hello k8s!"}`) using FastAPI behind an Nginx reverse proxy, with a CI/CD pipeline and GitOps deployment via ArgoCD.
 
 ## Architecture
 
@@ -30,14 +30,14 @@ fastapi Pod  ×2  (ghcr.io/brkcvlk/hello-k8s-fastapi:{{Github-SHA}})
   /health   → liveness probe
   /ready    → readiness probe
 ```
-### Example Argo CD application view : K8s objects and their relationships in the hello-k8s namespace
+### Example ArgoCD application view : K8s objects and their relationships in the hello-k8s namespace
 
-![Argo CD Overview](assets/argocd-overview.png)
+![ArgoCD Overview](assets/argocd-overview.png)
 
 ## Prerequisites
 
 - [minikube](https://minikube.sigs.k8s.io/)
-- [Argo CD](https://argo-cd.readthedocs.io/)
+- [ArgoCD](https://argo-cd.readthedocs.io/)
 
 ## Quick start
 
@@ -61,7 +61,7 @@ kubectl apply -n argocd --server-side --force-conflicts \
 kubectl get pods -n argocd
 ```
 
-Access the Argo CD UI : `argocd-server` is ClusterIP, minikube opens a tunnel:
+Access the ArgoCD UI : `argocd-server` is ClusterIP, minikube opens a tunnel:
 ```bash
 minikube service argocd-server -n argocd --url
 ```
