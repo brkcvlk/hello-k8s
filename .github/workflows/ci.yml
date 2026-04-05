@@ -11,6 +11,10 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - 'app/**'
+      - 'tests/**'
+      - '.github/workflows/ci.yml'
 
   workflow_dispatch:
 
