@@ -37,7 +37,6 @@ fastapi Pod  ×2  (ghcr.io/brkcvlk/hello-k8s-fastapi:{{Github-SHA}})
 ## Prerequisites
 
 - [minikube](https://minikube.sigs.k8s.io/)
-- [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [Argo CD](https://argo-cd.readthedocs.io/)
 
 ## Quick start
@@ -50,8 +49,8 @@ minikube start --cpus=2 --memory=4096
 
 > [!NOTE]
 > If kubectl is not installed, you can use it via minikube.
->> Set an alias: 
->>>`alias kubectl="minikube kubectl --"` or use `minikube kubectl --` directly.
+> Set an alias: 
+>`alias kubectl="minikube kubectl --"` or use `minikube kubectl --` directly.
 
 ### 2. Setup ArgoCD
 
@@ -82,11 +81,9 @@ argocd repo add https://github.com/brkcvlk/hello-k8s \
   --password <github-pat>
 ```
 
-### 3. Apply Manifests
+### 3. Apply ArgoCD Manifest
 ```bash
-kubectl apply -f manifests/namespace.yml
-kubectl apply -f manifests/
-minikube service nginx-service -n hello-k8s --url
+kubectl apply -f manifests/argocd-app.yml
 ```
 
 
