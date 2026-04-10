@@ -48,7 +48,7 @@ minikube start --cpus=2 --memory=4096
 ```
 
 > [!NOTE]
-> If kubectl is not installed, you can use it via minikube.
+> If kubectl isnt installed, you can use it via minikube.
 > Set an alias: 
 >`alias kubectl="minikube kubectl --"` or use `minikube kubectl --` directly.
 
@@ -61,12 +61,12 @@ kubectl apply -n argocd --server-side --force-conflicts \
 kubectl get pods -n argocd
 ```
 
-Access the ArgoCD UI : `argocd-server` is ClusterIP, minikube opens a tunnel:
+Access the ArgoCD UI : `argocd-server` is ClusterIP, minikube opens a tunnel
 ```bash
 minikube service argocd-server -n argocd --url
 ```
 
-Retrieve the initial admin password:
+Retrieve the initial admin password
 ```bash
 kubectl -n argocd get secret argocd-initial-admin-secret \
   -o jsonpath="{.data.password}" | base64 -d
